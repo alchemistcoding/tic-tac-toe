@@ -18,21 +18,15 @@ class Game
   end
 
   def show_board
-    col1 = []
-    col2 = []
-    col3 = []
+    board = ""
     @board.each_with_index do
       |cell, index|
-      if index < 3
-        col1.push(cell)
-      elsif index >= 3 && index < 6
-        col2.push(cell)
-      else col3.push(cell)  
+      board = board + "| #{cell}"  
+      if index == 2 || index == 5 || index == 8
+        board = board + " |\n ----------\n"
       end
     end
-    p col1 
-    p col2 
-    p col3
+    puts board
   end
 
   def check_winner

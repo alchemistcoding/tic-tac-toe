@@ -10,7 +10,6 @@ game.show_board
 until winner
   player.input
   coordinate = player.current_player[:move] - 1
-  puts coordinate
   game.move(coordinate)
   winner = player.current_player if game.check_winner
   player.swap_player
