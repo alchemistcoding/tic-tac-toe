@@ -9,7 +9,7 @@ class Player
   end
 
   def input
-    print "#{current_player[:name]} center your Move [0-8] : " 
+    print "#{current_player[:name]} center your Move [1-9] : " 
     @current_player[:move] = gets.chomp.to_i
   end
 

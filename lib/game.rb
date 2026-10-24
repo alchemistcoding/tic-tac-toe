@@ -14,7 +14,7 @@ class Game
   @@current_move = "O"
 
   def initialize
-    @board = [nil]*9
+    @board = (1..9).to_a
   end
 
   def show_board
