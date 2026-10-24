@@ -12,16 +12,20 @@ class Player
   def input
     valid_move = false
     until valid_move
-      print "#{current_player[:name]} center your Move [1-9] : "
-      player_input = gets.chomp.to_i
+      print "#{current_player[:name]} enter your Move [1-9][exit]: "
+      player_input = gets.chomp
+      if(player_input == "exit")
+        return true
+      end
+      player_input = player_input.to_i
       if(player_input >= 1 && player_input <= 9 && !@move_made.include?(player_input))
         valid_move = true
         @current_player[:move] = player_input
-        @move_made.push(player_input)
-        
+        @move_made.push(player_input)  
       else puts "enter a valid move"
       end
-    end  
+    end
+    return false  
   end
 
   def swap_player
