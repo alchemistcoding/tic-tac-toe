@@ -1,5 +1,5 @@
 require_relative "./lib/game"
-require_relative "./lib/player_input"
+require_relative "./lib/player"
 
 game = Game.new
 player = Player.new
